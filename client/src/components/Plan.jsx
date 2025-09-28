@@ -1,4 +1,5 @@
 import React from 'react'
+import { PricingTable } from "@clerk/clerk-react"
 
 const Plan = () => {
   return (
@@ -8,6 +9,9 @@ const Plan = () => {
              <p className="text-gray-500 max-w-md mx-auto">
           Pick the plan that suits your needs and unlock the full potential of our AI tools.
         </p>
+        </div>
+        <div className='mt-14 max-sm:mx-8'>
+            <PricingTable/>
         </div>
     </div>
   )
