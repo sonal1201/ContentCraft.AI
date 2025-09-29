@@ -29,12 +29,12 @@ const Sidebar = ({ sidebar, setSidebar }) => {
   const { signOut, openUserProfile } = useClerk();
   return (
     <div
-      className={`w-60 bg-white border-r border-gray-200 flex flex-col justify-between items-center max-sm:absolute top-14 bottom-0 ${sidebar ? "translate-x-0" : "max-sm:-translate-x-full"} transition-all duration-300 ease-in-out`}
+      className={`w-60 bg-white border-r overflow-hidden border-gray-200 flex flex-col justify-between items-center max-sm:absolute top-14 bottom-0 ${sidebar ? "translate-x-0" : "max-sm:-translate-x-full"} transition-all duration-300 ease-in-out`}
     >
       <div className="my-7 w-full">
         <img src={user.imageUrl} alt="" className="w-13 rounded-full mx-auto" />
         <h1 className="mt-1 text-center">{user.fullName}</h1>
-        <div className="px-6  mt-5 text-sm text-gray-700 font font-medium">
+        <div className="px-6 mt-5 text-sm text-gray-600 font font-medium">
           {navItems.map(({ to, label, Icon }) => (
             <NavLink
               key={to}
@@ -42,12 +42,12 @@ const Sidebar = ({ sidebar, setSidebar }) => {
               end={to === "/ai"}
               onClick={() => setSidebar(false)}
               className={({ isActive }) =>
-                `px-3.5 py-2.5 flex items-center gap-3 rounded ${isActive ? " bg-gradient-to-r from-[#5215ed] to-[#2504b8] text-white shadow-black shadow-5xl" : ""}`
+                `px-3.5 py-2.5 flex items-center gap-3 rounded ${isActive ? "bg-gradient-to-r from-[#3C81F6] to-[#9234EA] text-white" : ""}`
               }
             >
               {(isActive) => (
                 <>
-                  <Icon className={`w-4 h-4 ${isActive ? "text-black" : ""}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? "text-white" : ""}`} />
                   {label}
                 </>
               )}
