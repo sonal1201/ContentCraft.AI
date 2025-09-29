@@ -71,7 +71,7 @@ const WriteArticle = () => {
             <span
               onClick={() => setSelectedLength(item)}
               className={`text-xs px-4 py-1 border rounded-full cursor-pointer ${selectedLength.text === item.text ? "bg-blue-50 text-blue-700" : "text-gray-500 border-gray-300"}`}
-              key={index}
+              key={index} 
             >
               {item.text}
             </span>
