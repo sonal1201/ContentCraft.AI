@@ -21,7 +21,6 @@ const navItems = [
   { to: "/ai/remove-background", label: "Remove Background", Icon: Eraser },
   { to: "/ai/remove-object", label: "Remove Object", Icon: Scissors },
   { to: "/ai/review-resume", label: "Review Resume", Icon: FileText },
-  { to: "/ai/community", label: "Community", Icon: Users },
 ];
 
 const Sidebar = ({ sidebar, setSidebar }) => {
@@ -47,7 +46,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
             >
               {(isActive) => (
                 <>
-                  <Icon className={`w-4 h-4 ${isActive ? "text-white" : ""}`} />
+                  <Icon className={`w-4 h-4 ${!isActive ? "text-white" : ""}`} />
                   {label}
                 </>
               )}
