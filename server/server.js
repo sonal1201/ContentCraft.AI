@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { clerkMiddleware, requireAuth } from '@clerk/express'
 import "dotenv/config";
+import aiRouter from "./routes/aiRoutes.js";
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.get("/", (req, res) => {
 });
 
 app.use(requireAuth());
+
+app.use('/api/ai',aiRouter);
 
 app.listen(PORT, () => {
   console.log("Server is running on 3000");
