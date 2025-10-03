@@ -14,15 +14,25 @@ const Dashboard = () => {
   const { getToken } = useAuth();
 
   const getDashboardData = async () => {
-    setCreations(dummyCreationData);
+    // try {
+    //   const { data } = await axios.get("/api/user/get-user-creations", {
+    //     headers: { Authorization: `Bearer ${await getToken()}` },
+    //   });
+
+    //   if (data.success) {
+    //     setCreations(data.creations);
+    //   } else {
+    //     toast.error(data.message);
+    //   }
+    // } catch (error) {
+    //   toast.error(error.message);
+    // }
+    setLoading(false);
   };
 
   useEffect(() => {
-    console.log("Dashboard mounted");
     getDashboardData();
-    setLoading(false);
   }, []);
-
   return (
     <div className="h-full overflow-y-scroll p-6">
       <div className="flex justify-start gap-4 flex-wrap">
